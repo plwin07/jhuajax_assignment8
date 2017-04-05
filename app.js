@@ -36,6 +36,7 @@
             if (narrowList.items.length == 0) {
               narrowList.searchMessage = "No items matching description were found.";
             }
+            narrowList.searchTerm = "";
           })
           .catch(function (error) {
             console.log(error);
