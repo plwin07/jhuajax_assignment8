@@ -34,6 +34,7 @@
       } else {
         promise.then(function (response) {
             narrowList.items = response;
+            narrowList.searchTerm = "";
             if (narrowList.items.length == 0) {
               narrowList.searchMessage = "No items matching description were found.";
             }
