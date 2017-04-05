@@ -21,10 +21,10 @@
   NarrowItDownController.$inject = ['MenuSearchService']
   function NarrowItDownController(MenuSearchService) {
     var narrowList = this;
-
     narrowList.searchTerm = "";
     narrowList.items = "";
     narrowList.searchMessage = "";
+
     narrowList.searchList = function(searchTerm) {
       var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
       narrowList.searchTerm = "";
@@ -44,8 +44,8 @@
             console.log(error);
           })
       }
-
     };
+    
     narrowList.removeItem = function(itemIndex) {
       narrowList.items.splice(itemIndex,1);
     }
