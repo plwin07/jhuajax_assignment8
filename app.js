@@ -27,6 +27,7 @@
     narrowList.searchMessage = "";
     narrowList.searchList = function(searchTerm) {
       var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
+      narrowList.searchTerm = "";
       if (searchTerm.length == 0) {
         narrowList.searchMessage = "No items matching description were found.";
         narrowList.items = "";
@@ -36,7 +37,6 @@
             if (narrowList.items.length == 0) {
               narrowList.searchMessage = "No items matching description were found.";
             }
-            narrowList.searchTerm = "";
           })
           .catch(function (error) {
             console.log(error);
