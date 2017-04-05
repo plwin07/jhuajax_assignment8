@@ -29,6 +29,7 @@
       var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
       if (searchTerm.length == 0) {
         narrowList.searchMessage = "No items matching description were found.";
+        narrowList.items = "";
       } else {
         promise.then(function (response) {
             narrowList.items = response;
@@ -38,7 +39,7 @@
           })
           .catch(function (error) {
             console.log(error);
-          })      
+          })
       }
 
     };
